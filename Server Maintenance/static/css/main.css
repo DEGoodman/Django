@@ -1,0 +1,82 @@
+body {
+margin-left: auto;
+margin-right: auto;
+font-family: "Helvetica Neue", Helvetica, Arial, Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, sans-serif;
+}
+
+#wrapper {
+   height: 600px;
+}
+
+#right-bar {
+   visibility:hidden !important; 
+}
+
+
+form {
+width: 480px;
+margin-top: 80px;
+margin:auto;
+position:absolute;
+font-family: Inconsolata, Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+font-size: 14px;
+line-height: 24px;
+font-weight: bold;
+color: #002147;
+text-decoration: none;
+margin-left: 20%;
+display:inline;
+margin-bottom: 50px;
+}
+
+
+#date {
+   margin-top: 60px;
+}
+
+h3 {
+   margin-left: 64px;
+}
+
+select, option {
+   text-align: center;
+}
+
+#server_button {
+   margin-left: 30px;
+}
+
+#server_table {
+   border-radius: 4px;
+   width: 120px;
+   margin-left: 46px;
+}
+
+#server_table :nth-child(odd){
+   background-color: lightblue;
+}
+
+.rights {
+   padding-top: 10px;
+   padding-bottom: 10px;
+   margin-top: 10px;
+   margin-bottom: 10px;
+}
+
+#clear_button {
+   margin-top: 10px;
+   margin-left: 260px;
+}
+
+.sub_buts {
+   margin-top: -24px;
+   margin-left: 30px;
+   position: absolute;
+   display: block;
+   font-family: "Helvetica Neue", Helvetica, Arial, Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, sans-serif;
+}
+
+#update_button {
+   margin-top: 5px;
+   margin-left: 200px;
+}

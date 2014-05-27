@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+<!--Above is for domain-standard page wrappers and look-->
+
+{% block page-title %}
+Server Maintenance
+{% endblock %}
+
+<!--title in views-->
+{% block extra-css %}
+  <link href="{{ LOCAL_STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">
+  <link href="{{ LOCAL_STATIC_URL }}css/simple-slider.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="{{ LOCAL_STATIC_URL }}css/main.css">
+{% endblock %}
+<script type="text/javascript" src="{{ LOCAL_STATIC_URL }}js/jquery-min.js"></script>
+<script type="text/javascript" src="{{ LOCAL_STATIC_URL }}js/jquery-ui.custom.min.js"></script>
+<script src="{{ LOCAL_STATIC_URL }}js/simple-slider.js"></script>
+<script type="text/javascript" src="{{ LOCAL_STATIC_URL }}js/svr_maint.js"></script>
+<link rel="stylesheet" href="css/themename/jquery-ui.custom.css" />
+<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+
+{% block extra-js %}
+  <script src="{{ LOCAL_STATIC_URL }}js/svr_maint.js"></script>
+  <script>
+    $("#slider").bind("slider:changed", function(event, data) {
+      alert(data.value);
+      UpdateTime(this.value);
+    });
+  </script>
+{% endblock %}
+
+
+{% block content %}
+
+<form id="boxes" class="boxes container-fluid">
+  {% csrf_token %}
+
+  <div class="row">
+    
+    <!--right half-->
+    <div class="input-group col-sm-6 pull-right">
+      <h3>Expiration</h3>
+        <div id="datetimeWrapper">
+          <input type="date" id="theDate" class="form-control rights" value="">
+          <input type="text" id="time" class="form-control rights" value="">
+        </div>
+
+        <div id="sliderWrapper">
+          <input type="range" id="slider" class="form-control rights" min="0" max="600" value="60" step="10" width="240px" oninput="UpdateTime(this.value)" onchange="UpdateTime(this.value)">
+          <div id="note" width=200px>Current Value: <span id="currentValue" style="color:red;font-weight:bold;">60</span></div>
+        </div>
+
+      <button type="button" id="clear_button" class="btn btn-warning btn-xs" onclick="reset_times();">Reset</button>
+    </div>
+    
+    <!--left half-->
+    <h3>Servers</h3>
+    <select id="server_table"  class="col-sm-6" name="server_drop" size="12" autofocus multiple>
+    {% if servers %}
+
+      {% for server in servers %}
+        {% if server.maint_mode %}
+          <option platform="{{ server.platform }}" value="{{ server.host_name }}" style="background-color:#FF6600;">{{ server.host_name }}</option>
+        {% else %}
+          <option platform="{{ server.platform }}" value="{{ server.host_name }}">{{ server.host_name }}</option>
+        {% endif %}
+      {% endfor %}
+	  
+	  {% else %}
+      <script>alert("There are no servers present.");</script>
+    {% endif %}
+    </select>
+  </div>
+  <div class="row">
+    <button name="submit" type="submit" id="update_button" class="btn btn-success btn-lg pull-right">Update</button>
+  </div> 
+  <div class ="row sub_buts">  
+    <input type="button" class="btn btn-warning btn-xs" name="Button" value="Select All" onclick="selectAll('server_table',true)" />
+    <input type="button" class="btn btn-warning btn-xs" name="Button" value="Clear All" onclick="selectAll(document.getElementById('server_table'),false)" />
+  </div> 
+  
+</form>
+
+{% endblock content %}

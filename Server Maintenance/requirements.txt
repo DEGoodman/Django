@@ -1,0 +1,5 @@
+Django==1.5.4
+SQLAlchemy==0.8.4
+django-pyodbc==0.10
+ipython==1.1.0
+virtualenv==1.10.1
