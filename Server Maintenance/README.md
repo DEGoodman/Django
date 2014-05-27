@@ -12,10 +12,10 @@ Application is currently on V1.2.2
 - - -
 
 Changelog:
-	1.2.2:
+-	1.2.2:
 	updated SQL pointers
 
-	1.2.x:
+-	1.2.x:
 	allservers displayed in single table, alphabetically.
 	total GUI overhaul
 	can put servers in MM by datetime or slider
