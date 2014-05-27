@@ -16,7 +16,7 @@ Changelog:
 	updated SQL pointers
 
 -	1.2.x:
-	allservers displayed in single table, alphabetically.
-	total GUI overhaul
-	can put servers in MM by datetime or slider
-	servers can be removed from MM by Updating with slider set to 0
+	+	All servers displayed in single table, alphabetically.
+	+	Total GUI overhaul.
+	+	Can put servers in MM by datetime or slider.
+	+	Servers can be removed from MM by Updating with slider set to 0
