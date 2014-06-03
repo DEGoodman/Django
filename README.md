@@ -12,7 +12,7 @@ Included Projects:
 	Built for SysAdmins in my office, and for me to learn Django. First Django project. First Bootstrap project.
 
 
-*	Euler SHA
+*	Euler SPA
 
 	Practice buildding an SHA with Angular.js, review of Django, practice Python
 
